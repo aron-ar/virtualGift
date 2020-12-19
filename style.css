@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-y: hidden;
 }
 header {
   width: 100%;
@@ -17,6 +18,30 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-bottom: 1px solid gold;
+}
+header figure {
+  margin: 0;
+  background-image: linear-gradient(rgb(44, 157, 255), rgba(170, 230, 255, 1));
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  width: 100%;
+}
+header img {
+  height: 100%;
+  animation: noel 4s infinite ease-in-out;
+}
+@keyframes noel {
+  0% {
+    transform: translateX(300%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 header h1 {
   font-size: 1.5em;
@@ -188,7 +213,7 @@ main::before {
     justify-content: center;
   }
   main::before {
-    filter: none;
+    filter: blur(2px);
   }
   .card {
     min-width: 220px;
