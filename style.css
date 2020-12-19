@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 header {
   width: 100%;
@@ -221,6 +221,7 @@ main::before {
     font-size: 0.9em;
   }
   .modal {
+    padding: 2em;
     top: 5vh;
   }
 }
