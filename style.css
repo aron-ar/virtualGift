@@ -9,11 +9,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* overflow: hidden; */
 }
 header {
   width: 100%;
-  height: 20%;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +55,6 @@ main::before {
 .card {
   min-width: 250px;
   min-height: 250px;
-  /* border: 1px solid red; */
   margin: 1em 0;
   border-radius: 0.5em;
   position: relative;
@@ -69,8 +67,8 @@ main::before {
   content: "";
   position: absolute;
   box-sizing: content-box;
-  min-width: 250px;
-  min-height: 250px;
+  min-width: 100%;
+  min-height: 100%;
   border-radius: 0.5em;
   background: rgba(255, 255, 255, 0.5);
   z-index: -1;
@@ -79,6 +77,12 @@ main::before {
 .card .fas {
   font-size: 5em;
   margin-bottom: 0.5em;
+}
+
+.card:hover {
+  transform: rotateZ(-5deg) scale(1.1);
+  color: gold;
+  background: rgba(215, 185, 0, 0.2);
 }
 
 .card span {
@@ -162,17 +166,62 @@ main::before {
   justify-content: center;
 }
 
-@media screen and (min-width: 320px) {
-}
-@media screen and (min-width: 480px) {
-}
 @media screen and (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  header h2 {
+    font-size: 1.8em;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2em;
+  }
+  main {
+    height: 80vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  main::before {
+    filter: none;
+  }
+  .card {
+    min-width: 220px;
+    min-height: 220px;
+    font-size: 0.9em;
+  }
+  .modal {
+    top: 5vh;
+  }
 }
 @media screen and (min-width: 1024px) {
+  .grid {
+    gap: 5em;
+  }
+  .card {
+    min-width: 270px;
+    min-height: 270px;
+    font-size: 1.2em;
+  }
 }
 @media screen and (min-width: 1366px) {
-}
-@media screen and (min-width: 1440px) {
-}
-@media screen and (min-width: 19202px) {
+  header h1 {
+    font-size: 3em;
+  }
+  header h2 {
+    font-size: 2.8em;
+  }
+  .grid {
+    gap: 7em;
+  }
+  .card {
+    min-width: 290px;
+    min-height: 290px;
+    font-size: 1.3em;
+  }
 }
